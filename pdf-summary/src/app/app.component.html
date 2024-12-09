@@ -1,0 +1,23 @@
+<br />
+<br />
+
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8" style="border: 1px solid black;">
+      <br />
+      <form (submit)="uploadFile($event)">
+        <input type="file" (change)="onFileSelected($event)" accept=".pdf" />
+        <input type="number" [(ngModel)]="wordLimit" placeholder="Enter word limit" required
+          [ngModelOptions]="{standalone: true}" />
+        <button type="submit">Upload and Summarize</button>
+      </form>
+
+      <hr />
+
+      <h3><strong>Summary</strong></h3>
+      <p>{{result}}</p>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
